@@ -2,10 +2,12 @@ function matrix = AddSizeColorColumn(M, color)
    
     matrix = M;
     
-    if size(matrix,2) == 4
-        matrix(:,4) = 40;
+    if size(matrix,2) > 3
+        %matrix(:,4) = [];
+        matrix = matrix(:,1:3);
     end
     
+    matrix(:,4) = 40;
     matrix = wextend('addcol','zpd', matrix, 3,'r');
 
     if (strcmp(color, 'red'))
