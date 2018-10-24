@@ -4,14 +4,10 @@ close all;
 
 file_filters = ...
 [
-"250_01";
-"500_01";
-"750_01";
-"1000_01";
-"250_all";
-"500_all";
-"750_all";
-"1000_all";
+"250_13";
+"500_13";
+"750_12";
+"1000_08";
 ];
 
 source_folder_name = 'ola01/out/';
@@ -21,9 +17,9 @@ for n = 1 : length(file_filters)
         
     disp(file_filters(n));
     
-    nsga_ii_file = source_folder_name + file_filters(n) + '_runALL_nsgaii.out';
-    nsga_iii_file = source_folder_name + file_filters(n) + '_runALL_nsgaiii.out';
-    ensga_iii_file = source_folder_name + file_filters(n) + '_runALL_ensgaiii.out';
+    nsga_ii_file = source_folder_name + file_filters(n) + '_binary_nsgaii.out';
+    nsga_iii_file = source_folder_name + file_filters(n) + '_binary_nsgaiii.out';
+    ensga_iii_file = source_folder_name + file_filters(n) + '_binary_ensgaiii.out';
     
     NSGA_II = csvread(nsga_ii_file);
     NSGA_III = csvread(nsga_iii_file);
