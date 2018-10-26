@@ -4,14 +4,14 @@ close all;
 
 file_filters = ...
 [
-"250_13";
+"250_08";
 "500_13";
 "750_12";
 "1000_08";
 ];
 
-source_folder_name = 'ola01/out/';
-dest_folder_name = 'ola01/pics/';
+source_folder_name = 'ola04/out/';
+dest_folder_name = 'ola04/pics/';
 
 for n = 1 : length(file_filters)
         
