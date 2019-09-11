@@ -1,0 +1,54 @@
+clc;
+clear;
+close all;
+
+file_filters = ...
+[
+%"cybershake_1000";
+"epigenomics_1000";
+%"ligo_1000";
+%"montage_1000";
+%"sipht_1000";
+];
+
+source_folder_name = 'mdnc2019/data/';
+
+for n = 1 : length(file_filters)    
+    none_file = source_folder_name + file_filters(n) + '_none_ensgaiii_archive.csv';
+    p2p_file = source_folder_name + file_filters(n) + '_p2p_ensgaiii_archive.csv';
+    mdnc_file = source_folder_name + file_filters(n) + '_level_ensgaiii_archive.csv';
+    
+    disp(none_file);
+    disp(p2p_file);
+    disp(mdnc_file);
+    
+    NONE = csvread(none_file);
+    P2P = csvread(p2p_file);
+    MDNC = csvread(mdnc_file);
+    
+    % prepare data
+    data=cell(3,3);
+
+    for co=1:size(data,1)
+        Ac{co}=NONE(:,co);
+        Bc{co}=P2P(:,co);
+        Cc{co}=MDNC(:,co);
+    end
+
+    data = vertcat(Ac,Bc,Cc);
+
+    xlab = {'Cost','Makespan','Data Movement'};
+
+    col=[102,255,255, 200;
+    51,153,255, 200;
+    0, 0, 255, 200];
+
+    col=col/255;
+
+    multiple_boxplot(data',xlab,{'O-DAG', 'P2P-DAG', 'MDNC-DAG'},col')
+    title('Epigenomics-1000 tasks')   
+    
+end 
+
+
+% https://ww2.mathworks.cn/help/stats/parallelcoords.html
