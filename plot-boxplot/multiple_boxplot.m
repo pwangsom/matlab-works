@@ -58,7 +58,7 @@ else
     idx=1:L;
     set(gca,'xticklabel',strsplit(num2str(idx),' '));
 end
-    
+
 
 % Get some colors
 if nargin>=4
@@ -72,10 +72,11 @@ color=repmat(cmap, 1, L);
 % Apply colors
 h = findobj(gca,'Tag','Box');
 for jj=1:length(h)
-   patch(get(h(jj),'XData'),get(h(jj),'YData'),color(1:3,jj)','FaceAlpha',color(4,jj));
+    patch(get(h(jj),'XData'),get(h(jj),'YData'),color(1:3,jj)','FaceAlpha',color(4,jj));
 end
 
 if nargin>=3
     legend(fliplr(Mlab));
+    %legend(Mlab);
 end
 end

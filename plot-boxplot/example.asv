@@ -7,7 +7,7 @@ close all;
 mlab = {'O-DAG', 'P2P-DAG', 'MDNC-DAG'};
 
 x = 1:3;
-y = randn(3, 3, 10);
+y = randn(3, 3, 100);
 
 % Plot boxplots
 
@@ -23,7 +23,7 @@ end
 set([h.lwhis h.uwhis], 'linestyle', '-');
 set(h.out, 'marker', '+');
 
-xticks([1 2 3])
-set(gca, 'xticklabel', {'Cost','Makespan','Data Movement'});
+xticks([0 5 10])
 
+set(gca, 'xticklabel', '');
 legend(mlab);
