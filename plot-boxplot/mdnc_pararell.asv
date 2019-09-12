@@ -45,7 +45,7 @@ for n = 1 : length(file_filters)
     %set(p,'DefaultAxesColorOrder',[0 0.4470 0.7410;0.9290 0.6940 0.1250]);
     set(p,'DefaultAxesColorOrder',[0 0.4470 0.7410;0.4660 0.6740 0.1880;0.9290 0.6940 0.1250]);
     
-    %parallelcoords(meas,'Group',groups,'Labels',labels,'LineWidth',1);
+    parallelcoords(meas,'Group',groups,'Labels',labels,'LineWidth',1);
     
     parallelcoords(meas,'group',groups,'labels',labels,'quantile',.25,'LineWidth',2);
     title('Montage-1000 tasks')
