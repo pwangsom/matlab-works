@@ -8,10 +8,42 @@ file_filters = ...
 %"epigenomics_1000";
 %"ligo_1000";
 %"montage_1000";
+%"sipht_1000";
+
+%"epigenomics_50";
+%"epigenomics_100";
+%"epigenomics_500";
+%"epigenomics_800";
+%"epigenomics_1000";
+
+%"ligo_50";
+%"ligo_100";
+%"ligo_500";
+%"ligo_800";
+%"ligo_1000";
+
+%"montage_50";
+%"montage_100";
+%"montage_500";
+%"montage_800";
+%"montage_1000";
+
+%"cybershake_50";
+%"cybershake_100";
+%"cybershake_500";
+%"cybershake_800";
+%"cybershake_1000";
+
+%"sipht_50";
+%"sipht_100";
+%"sipht_500";
+%"sipht_800";
 "sipht_1000";
+
 ];
 
 source_folder_name = 'mdnc2019/data/';
+fi_name = 'SIPHT 1000 tasks';
 
 for n = 1 : length(file_filters)    
     none_file = source_folder_name + file_filters(n) + '_none_ensgaiii_archive.csv';
@@ -46,7 +78,8 @@ for n = 1 : length(file_filters)
 
     %multiple_boxplot(data',xlab,{'O-DAG', 'P2P-DAG', 'MDNC-DAG'},col')
     multiple_boxplot(data',xlab,{'O-DAG', 'MDNC-DAG'},col')
-    title('SIPHT-1000 tasks')   
+    
+    title(fi_name);
     
 end 
 
